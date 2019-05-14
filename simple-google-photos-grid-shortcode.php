@@ -26,11 +26,15 @@ class Simple_Google_Photos_Grid_Shortcode
     $num_photos_per_row = $attributes['number-photos-per-row']
       ? intval($attributes['number-photos-per-row'])
       : Simple_Google_Photos_Grid::NUMBER_PHOTOS_PER_ROW;
+	  
+	$link_to = ($attributes['link-to'] == 'album_url' || $attributes['link-to']=='photo_url')
+	  ? $attributes['link-to']
+	  : Simple_Google_Photos_Grid::LINK_TO;
 
     $grid = new Simple_Google_Photos_Grid();
 
     $photos = $grid->get_photos($attributes['album-url'], $cache_interval);
 
-    return $grid->html($photos, $num_photos, $num_photos_per_row, $attributes['album-url']);
+    return $grid->html($photos, $num_photos, $num_photos_per_row, $attributes['album-url'], $link_to);
   }
 }

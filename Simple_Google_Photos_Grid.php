@@ -19,11 +19,16 @@ class Simple_Google_Photos_Grid
    * Default number of photos per row, thus 2x2 grid
    */
   const NUMBER_PHOTOS_PER_ROW = 2;
+  
+  /**
+   * Link to the album_url (default) or the photo_url
+   */
+  const LINK_TO = 'album_url';  
 
   protected static $css_loaded = false;
   protected static $js_loaded = false;
 
-  public function html($photos, $num_photos_to_show, $num_photos_per_row, $link_url) {
+  public function html($photos, $num_photos_to_show, $num_photos_per_row, $link_url, $link_to) {
 
     $container_class = self::name();
     $cell_class = self::name() . '-cell';
@@ -37,7 +42,9 @@ class Simple_Google_Photos_Grid
     $html .= '<div class="' . $container_class . '">';
     foreach(array_slice($photos, 0, $num_photos_to_show) as $i => $photo) {
       $html .= '<div class="'.$cell_class . '" style="width:'.$cell_width.'%">';
-      $html .= '<a href="' . $link_url . '" target="_blank"><img src="' . $photo . '" alt="Google Photo" class="' . $image_class . '"></a>';
+      $html .= '<a href="';
+	  $html .= $link_to == 'photo_url' ? $photo : $link_url;
+	  $html .= '" target="_blank"><img src="' . $photo . '" alt="Google Photo" class="' . $image_class . '"></a>';
       $html .= '</div>';
     }
     $html .= '</div>';

@@ -44,6 +44,7 @@ Available attributes are:
 - number-photos: (optional) number of photos to display, defaults to 4
 - number-photos-per-row: (optional) number of photos per row, defaults to 2
 - cache-interval: (optional) length, in minutes, to cache the photo urls retrieved from Google, defaults to 15
+- link-to: (optional) 'album_url' or 'photo_url' to allow linking to the whole album or individual photos
 
 `[simple_google_photos_grid album-url="https://photos.app.goo.gl/G8EOLs5YtESchh4g1" number-photos="6" number-photos-per-row="3" cache-interval="120"]`
 
@@ -52,6 +53,9 @@ Available attributes are:
 1. Two grids on a page, one placed with a shortcode and one placed with a widget.
 
 == Changelog ==
+
+= 1.3.1 =
+* Added parameter to html function to allow linking to individual photos rather than entire album
 
 = 1.3 =
 * Added "number photos per row" configuration/attribute to have grids other than 2x2

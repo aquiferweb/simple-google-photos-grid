@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Simple Google Photos Grid
- * Plugin URI: https://github.com/datvance/simple-google-photos-grid
+ * Plugin Name: Simple Google Photos Grid Mod
+ * Plugin URI: https://github.com/aquiferweb/simple-google-photos-grid
  * Description: Show the latest photos from a public Google Photos album.
- * Version: 1.3
- * Author: Josheli
+ * Version: 1.3.1
+ * Author: Josheli and AquiferWeb
  * Author URI: https://josheli.com
  * License: GPL2
  */
